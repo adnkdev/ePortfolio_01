@@ -19,6 +19,10 @@ span {
     line-height: 1.25em;
 }
 
+h1{
+    font-size: 36px;
+}
+
 p {
     line-height: 1.5em;
     font-size: 16px;
@@ -38,6 +42,18 @@ li {
 /*makes the about-me section the entire min height= 100vh*/
 .flex-1 {
     flex: 1;
+}
+
+/*makes the width of the about-me info container max width of 800px of the flex flex-1 container*/
+.row{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+
+}
+
+.text--purple{
+    color: #6030b1;
 }
 
 /*NAVIGATION BAR*/
@@ -92,6 +108,81 @@ nav {
 
 }
 
+/*ABOUT ME*/
+
+/*makes the page the entire height 100vh=1920px*/
+#about__me {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*allows the undraw image to take up the full height of page*/
+.about-me__info {
+    display: flex;
+    flex-direction: column;
+}
 
 
+/*centers the image, h1 and p*/
+.about-me__info--container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /*styles the writing to become less wide*/
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/*changes the size of picture*/
+.about-me__picture--mask{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    /*gets rid of square box*/
+    overflow: hidden;
+    /*styles the bottom to display a shadow effect*/
+    box-shadow: 0 8px 16px rgba(0,0,0,0.16);
+    margin-bottom: 28px;
+
+}
+
+/*make sure the image that is wrapped has width of 100%*/
+.about-me__picture{
+    width: 100%;
+
+    /*improving picture*/
+    transform: scale(1.5);
+    padding-top: 8px;
+}
+
+/*moves the paragraph down*/
+.about-me__info--title{
+    margin-bottom: 28px;
+}
+
+.about-me__info--para{
+    font-size: 20px;
+    margin-bottom: 28px;
+}
+
+.about-me__link {
+    font-size: 20px;
+    color: #242424;
+    text-decoration: none;
+    padding: 0 16px;
+}
+
+/*allows the undraw image to take up the full height of page*/
+.about-me__image--container{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.about-me__image{
+    width: 100%;
+}
 
