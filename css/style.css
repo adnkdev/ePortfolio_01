@@ -19,7 +19,7 @@ span {
     line-height: 1.25em;
 }
 
-h1{
+h1 {
     font-size: 36px;
 }
 
@@ -35,7 +35,7 @@ li {
 
 /* makes <div class="about-me__info--row"> also min height 100vh */
 
-.flex{
+.flex {
     display: flex;
 }
 
@@ -44,16 +44,32 @@ li {
     flex: 1;
 }
 
+/*spaces the bottom of about me section and top of languages sections */
+.container {
+    padding: 50px 0;
+}
+
 /*makes the width of the about-me info container max width of 800px of the flex flex-1 container*/
-.row{
+.row {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
 
 }
 
-.text--purple{
+/*styles the text purple*/
+.text--purple {
     color: #6030b1;
+}
+
+/*makes every even section background-color grey --> reusable code*/
+section:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+/*spaces the language images and the header "this is my technology stack"*/
+.section__title {
+    margin-bottom: 20px;
 }
 
 /*NAVIGATION BAR*/
@@ -125,7 +141,7 @@ nav {
 
 
 /*centers the image, h1 and p*/
-.about-me__info--container{
+.about-me__info--container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -137,20 +153,20 @@ nav {
 }
 
 /*changes the size of picture*/
-.about-me__picture--mask{
+.about-me__picture--mask {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     /*gets rid of square box*/
     overflow: hidden;
     /*styles the bottom to display a shadow effect*/
-    box-shadow: 0 8px 16px rgba(0,0,0,0.16);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
     margin-bottom: 28px;
 
 }
 
 /*make sure the image that is wrapped has width of 100%*/
-.about-me__picture{
+.about-me__picture {
     width: 100%;
 
     /*improving picture*/
@@ -159,11 +175,11 @@ nav {
 }
 
 /*moves the paragraph down*/
-.about-me__info--title{
+.about-me__info--title {
     margin-bottom: 28px;
 }
 
-.about-me__info--para{
+.about-me__info--para {
     font-size: 20px;
     margin-bottom: 28px;
 }
@@ -176,13 +192,72 @@ nav {
 }
 
 /*allows the undraw image to take up the full height of page*/
-.about-me__image--container{
+.about-me__image--container {
     flex: 1;
     display: flex;
     align-items: center;
 }
 
-.about-me__image{
+
+.about-me__image {
     width: 100%;
 }
 
+
+/*LANGUAGES SECTION*/
+
+/*shrink the size of image*/
+.language__img {
+    width: 100%;
+    max-width: 100px;
+    /*makes the transition of hover smoother*/
+    transition: all 300ms ease;
+}
+
+.language:hover .language__img {
+    /*makes the img brightness lower*/
+    filter: brightness(80%);
+    /*makes the img a little transparent*/
+    opacity: 0.86;
+    /*shrink the img when hover*/
+    transform: scale(0.9);
+}
+
+.language {
+    /*sets the percentage of image width to take up in each row*/
+    width: 25%;
+    /*moving the text for the images relative to language wrapper & df and jcc makes the image in the center*/
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/*ensure the images are spaced properly*/
+.language__img--wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 16px;
+}
+
+/*makes the images into rows*/
+.language__list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%
+}
+
+/*positions the language name beneath the image relative to language wrapper*/
+.language__name {
+    position: absolute;
+    bottom: 0;
+    /*starts of with a scale of 0 of the text size*/
+    transform: scale(0);
+    transition: all 300ms ease;
+    font-size: 20px;
+}
+
+/*hover targets the language wrapper and transform the language name back to full text size */
+.language:hover .language__name {
+    transform: scale(1);
+}
