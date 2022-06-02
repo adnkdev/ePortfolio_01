@@ -7,6 +7,7 @@
     box-sizing: border-box;
 }
 
+
 h1,
 h2,
 h3,
@@ -26,6 +27,11 @@ h1 {
 p {
     line-height: 1.5em;
     font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    position: relative;
 }
 
 /*removes the dot points*/
@@ -49,7 +55,8 @@ li {
     padding: 50px 0;
 }
 
-/*makes the width of the about-me info container max width of 800px of the flex flex-1 container*/
+/*makes the width of the about-me info container max width of 800px of the flex flex-1 container
+---> also makes the text centered*/
 .row {
     width: 100%;
     max-width: 800px;
@@ -371,4 +378,100 @@ nav {
 .project__description--link {
     text-align: left;
     color: white;
+}
+
+/*FOOTER*/
+
+footer {
+    background-color: #242424;
+}
+
+.footer__anchor {
+    margin-bottom: 20px;
+    position: relative;
+
+}
+
+.footer__img--logo {
+    width: 70px;
+    height: 70px;
+}
+
+.footer__row {
+    padding: 8% 0;
+    /*when flexboxing, need to check if the parent is 100% width first */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__social--list {
+    max-width: 500px;
+    /*when flexboxing, need to check if the parent is 100% width first */
+    width: 100%;
+    /*spaces the list in the footer */
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 28px;
+}
+
+
+.footer_social--link,
+.footer__copyright {
+    color: #f8f8f8;
+}
+
+
+.footer__logo--popper {
+    color: white;
+    /*position the top button relative to the foot__anchor*/
+    position: absolute;
+    right: 0;
+    top: 30px;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 450ms ease;
+    transition: transform 500ms ease;
+    
+
+}
+
+.footer__anchor:hover .footer__logo--popper{
+    transform: translateX(60px);
+    opacity: 1;
+}
+
+/*makes the scrolling to the top easier*/
+html{
+    scroll-behavior: smooth;
+}
+
+/*same as the blur effect, position underline relative to the <a> in the general section+ starts out with width 0*/
+
+.link__hover-effect:after{
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 0;
+    bottom: -3px;
+    /*left to right underline effect*/
+    right: 0;
+    transition: all 300ms ease ;
+
+}
+
+
+.link__hover-effect:hover:after{
+    width: 100%;
+    /*left to right underline effect*/
+    left: 0;
+}
+
+.link__hover-effect--white::after{
+    background-color: white;
+}
+
+.link__hover-effect--black::after{
+    background-color: black;
 }
