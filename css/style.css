@@ -260,4 +260,111 @@ nav {
 /*hover targets the language wrapper and transform the language name back to full text size */
 .language:hover .language__name {
     transform: scale(1);
+    opacity: 1;
+}
+
+/*PROJECTS*/
+
+.project__list {
+    padding-top: 40px;
+}
+
+.project {
+    margin-bottom: 135px;
+}
+
+.project:last-child {
+    margin-bottom: 40px;
+}
+
+
+/*resizes the image to fit the project__wrapper*/
+.project__img {
+    width: 100%;
+    /*makes the blur and resize effect smoother*/
+    transition: all 500ms ease;
+}
+
+.project__wrapper {
+    /*ensures the img is 100% of project class*/
+    display: flex;
+    /*creates the shadow effect*/
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.45);
+    /*prohibits the image from spilling out*/
+    border-radius: 20px;
+    overflow: hidden;
+    /*prohibits the image from spilling out*/
+    position: relative;
+}
+
+.project__wrapper:before {
+    /*always put content with a :before*/
+    content: "";
+    /*setting the layout for the darken affect when hover*/
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #1c1d25;
+    /*sets opacity to 0 initally*/
+    opacity: 0;
+    transition: opacity 450ms ease;
+    /*stacks the black screen on the project__img, positive means above, negative is below*/
+    z-index: 2;
+}
+
+/*stacks the black screen on the project__img*/
+.project:hover .project__wrapper:before {
+    opacity: 0.7;
+}
+
+/*when hover over project class the project__img blurs and increases in size*/
+.project:hover .project__img {
+    transform: scale(1.07);
+    filter: blur(5px);
+}
+
+/*makes the opacity 1 and moves the description to the up 50%*/
+.project:hover .project__description{
+    opacity: 1;
+    transform: translateY(-50%);
+}
+
+.project__description {
+    /*position the text relative to the project__wrapper*/
+    position: absolute;
+    top: 50%;
+    left: 90px;
+    /*position of text is initially at the bottom*/
+    /*if you do not want sliding up transition, just paste transform: translateY(-50%);*/
+    transform: translateY(100%);
+    max-width: 550px;
+    /*stacks the project description on the black blur effect*/
+    z-index: 3;
+    /*opacity initally zero when the cursor is not hovered over image*/
+    opacity: 0;
+    transition: opacity 400ms ease;
+    /*displays the sliding up transition*/
+    transition: transform 400ms;
+
+}
+
+.project__description--title{
+    font-size: 40px;
+}
+
+.project__description--subtitle{
+    margin: 16px 0;
+
+}
+
+.project__description--link{
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 16px;
+}
+.project__description--title, .project__description--subtitle, .project__description--para, .project__description--link {
+    text-align: left;
+    color: white;
 }
