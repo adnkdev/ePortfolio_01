@@ -483,41 +483,77 @@ html {
 
 /*responsive for phones, tablets, etc*/
 
-@media (max-width:768px){
+@media (max-width:768px) {
 
-    nav{
+    nav {
         height: 68px;
     }
 
-    h1{
+    h1 {
         font-size: 28px;
     }
 
-    .about-me__info--para{
+    .about-me__info--para {
         font-size: 18px;
     }
 
-    .language{
-        width:calc(100% / 3);
+    .language {
+        width: calc(100% / 3);
 
     }
 
-    .project__description--para{
+    .project__description--para {
         font-size: 12px;
 
     }
 
-    .project__description{
+    .project__description {
         padding-right: 30px;
-        left:30px;
+        left: 30px;
     }
-    
+
 }
 
 /*responsive for small phones*/
 
-@media (max-width:480px){
-    
+@media (max-width:480px) {
+
+
+    /*displays only the last contact link*/
+    .nav__link:not(:last-child) {
+        display: none;
+    }
+
+    /*allows for the text align in project description title and subtitle*/
+    .project__description {
+        padding: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    /*removes the paragraph description*/
+    .project__description--para {
+        display: none;
+    }
+
+    /*aligns the links in the center*/
+    .project__description--links {
+        display: flex;
+        justify-content: center;
+    }
+
+    .project__description--subtitle {
+        text-align: center;
+        margin: 12px 0;
+    }
+
+    .project__description--title {
+        text-align: center;
+        line-height: 1;
+        font-size: 32px;
+    }
+
+
 
 
 
