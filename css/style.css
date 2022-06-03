@@ -32,6 +32,11 @@ p {
 a {
     text-decoration: none;
     position: relative;
+    transition: opacity 300ms ease;
+}
+
+i:hover {
+    opacity: 0.7;
 }
 
 /*removes the dot points*/
@@ -173,6 +178,9 @@ nav {
     margin-bottom: 28px;
 
 }
+
+
+
 
 /*make sure the image that is wrapped has width of 100%*/
 .about-me__picture {
@@ -518,7 +526,6 @@ html {
 
 @media (max-width:480px) {
 
-
     /*displays only the last contact link*/
     .nav__link:not(:last-child) {
         display: none;
@@ -552,12 +559,114 @@ html {
         line-height: 1;
         font-size: 32px;
     }
+}
 
 
+/*ANIMATIONS*/
 
 
+.about-me__picture--mask {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    /*gets rid of square box*/
+    overflow: hidden;
+    /*styles the bottom to display a shadow effect*/
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
+    margin-bottom: 28px;
+    /*link the animation and profile pic*/
+    animation: animate-profile-picture 800ms 200ms backwards;
+
+}
+
+/*displays the zooming effect on the profile*/
+@keyframes animate-profile-picture {
+    0% {
+        transform: scale(0);
+    }
+
+    80% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+.about-me__info--title {
+    margin-bottom: 28px;
+    /*400 ms creates a delay*/
+    animation: fade-up 650ms 400ms backwards;
+
+}
+
+.about-me__info--para {
+    font-size: 20px;
+    margin-bottom: 28px;
+    animation: fade-up 650ms 600ms backwards;
+}
+
+.about-me__links {
+    font-size: 20px;
+    color: #242424;
+    text-decoration: none;
+    padding: 0 16px;
+    animation: fade-up 650ms 800ms backwards;
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
 
+}
+
+.about-me__image {
+    width: 100%;
+    animation: fade-in 1200ms 800ms backwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+
+}
+
+.wave {
+    /*<span> is an inline element, so you need to change it to inline block so it can rotate*/
+    display: inline-block;
+    animation: animate-wave 500ms infinite ease-in-out;
+
+}
+
+@keyframes animate-wave {
+
+    0% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(30deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
 
 
 }
